@@ -1,30 +1,53 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
+    
+    HTML uses tags in order to create what we look at in the internet.  These tags help us indicate what needs to be displayed and how they will be displayed.  Some of these tags are called semantic tags.  These tags help define the website and create an outline that helps both the developer and reader understand the website easier.  Semantic tags define what content they may contain, instead of non-semantic tags that may not describe what they are at first glance.  For example, a <header> tag may be used in order to show that the content inside the header tag is used for the top part of the website with information that generally holds header information. i.e. ('Title', 'name', etc.)
 
 2. What is the box model?
 
+   In HTML and CSS, each element in HTML is put into a 'box'.  The Box Model is the concept that inside this box, there are four properties that affect the box itself.  They consist of: margin, border, padding, and the content itself.   
+   We can think about this as a sheet of paper with a paragraph on it.  The preset margin on a paper is 1 in around all edges.  Likewise, in CSS, the margin is the outside of the box that surrounds border, padding and the content and separates the element with the other elements.   Border is the outline that surrounds the padding and the content.  Padding is the space between the border and the content. The content is whatever is determined and can be directly configured.
+
 3. What is the difference between IDs and Classes?
+
+    The difference between IDs and Classes are that they change different items.  IDs specifically target one element inside the HTML, where classes change one to multiple elements with that specific class inside that element.  To use a class, one would simply need to put a period before the class name.  Additionally for the ID, a # can be used. In the HTML, inside the element you would make the property 'class' or 'id' = 'name'.
 
 4. What is z-index (CSS property) useful for?
 
+    The z-index is used to manipulate the z axis which is essentially arranging from 'front' to 'back'.  It can only be used when the element has a position value.  It is extremely useful when wanting to put an image in the back of a different element.  Additionally, it helps to create layers and overlapping for the different elements.
+
 5. Summarize what the keyword 'this' is used for?
+
+    The coder can understand the context of the code with the word 'this'.  'This' is an identifier that attaches itself with certain items/elements that helps the coder understand where the items/elements may be used.  Some examples are with classes and creating methods or variables inside of the class.  One could think of it like a tag at a store.  The tag would contain what the item is and generally what store it is for as well.  Thus, the buyer can identify what they can do with that item whether it be purchasing or putting it back on the rack.
 
 6. What is a callback? What are common uses for callbacks in JavaScript?
 
+    A callback is a function that is passed down to another function as a parameter.  Generally, prototypes take in a callback function as a parameter to be used.  An example I use quite often is an Array.prototype.map() which takes in a callback function as a parameter, and additional information if needed.  Callbacks are useful, because they can be used in many different situations.  If a function is needing a callback, but the callback won't be used after that, they can create an unnamed function.  However, if they plan on reusing the callback, they can name that function and use it multiple times in different functions, if they put it in the proper scope.
+
 7. What is a closure and why is it useful?
+
+    A closure is a function within a function.  It is very useful especially when using user data and trying to maintain security and privacy.  If secure data is passed around inside the closure, it may not want to leave the outer function.  Closures allow that extra security and protection, because of scope and the way that it was created.  
 
 8. How does a prototype work?
 
+    A prototype is a link to whatever object/function we are working with.  They work through multiple ways.  For an object (an object meaning an array, object, string, variable, etc.), there are preset prototypes that allow you to manipulate or read data in the way that you would like. For an example, you can use Array.map() which is a prototype in order to create a new array that uses a callback to go through each item in that array.  Additionally, you can create your own prototypes by 'linkin' them together with the two items you'd like.  For example in a Person class, you can create a Person.prototype.eyeColor = 'brown' and it would add that prototype for you.
+
 9. Describe what a component-based framework/library is?
+
+    A component-based framework/library is compiled of multiple components or features that render into one.  Essentially, this is used in order to help efficiency and create a more readable code.  Not only efficient, but it helps the DOM replace certain components instead of changing the whole thing everytime. 
 
 10. What is the component lifecycle in React?
 
+    In React, the component lifecycle can be split into four phases: initialization, mounting, updating, and unmounting.  Initialization is creating/defining the initial values for props and state.  Mounting is when it is getting ready to be rendered onto the DOM.  Updating has methods that allow React / the DOM to know when things change and need to be re-rendered. Unmounting is the opposite of mounting where it is getting things ready to be taken off of the DOM.  This is useful when performing maintenance and cleanup.
+
 11. What is REST? (not just a description of the acronym)
+
+    REST stands for representational state transfer.  It provides an easier way to communicate with a client and a server.  The reason being is because of the separation of the client and server.  The server does not need to know anything about the client and vice versa.  This allows messages to be understood in between without any conflicts.  The way to communicate with each other is generally used with the get, post,put, delete functions.
 
 12. Name three common ways of getting data from a request (in Express.JS):
 
-
+    The three common ways of getting data from a request are: body, query, and params.  The body is passed through an object, and can contain any information from the client to the server that either needs to be manipulated or created.  Query are parameters that generally help locate the objects/items needed to show from the server to the client.  Additionally, params is to locate the id that helps either find a certain object specifically to go back to the client or to remove that item.
 
 -- =====================
 create table users (
@@ -38,8 +61,21 @@ email varchar(255)
 
 -Get all users:
 
+select * from users
+
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+
+insert into users (id, name, email)
+values (1, 'Michael Han', 'fake@fake.com')
 
 -Update the newly created user's name to 'Bobby Boy':
 
+update users
+set name = 'Bobby Boy'
+where id = 1
+
+
 -Delete the newly updated user:
+
+delete from users
+where id = 1
